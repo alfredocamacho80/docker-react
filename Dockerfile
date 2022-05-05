@@ -8,4 +8,6 @@ COPY --chown=node:node ./ ./
 CMD ["npm", "run", "build"]
 
 FROM nginx
+#EXPOSE SOLO SIRVE EN AWS ELASTIC BEANSTALK, LOCALMENTE NO HACE NADA 
+EXPOSE 80
 COPY --from=builder /home/node/app/build /usr/share/nginx/html
